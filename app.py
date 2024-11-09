@@ -1,4 +1,13 @@
-"""Module providing webpage initialization and basic functionality of the web calculator."""
+"""
+Module providing webpage initialization.
+
+Functions:
+    start()
+        Receives user input and calls appropriate calculation method.
+
+Variables:
+    app: Flask
+    """
 
 from flask import Flask, request
 from calculator import Calculator
@@ -7,8 +16,8 @@ app = Flask(__name__)
 
 
 @app.route('/calculate')
-def hello_world():  # put application's code here
-    """Function performing mathematical operations based on user input."""
+def start():  # put application's code here
+    """Function requesting user input and calling appropriate calculation method."""
     #Requesting input parameters from user:
     op = request.args.get('op', type=str)
     arg1 = request.args.get('arg1', type=int)
